@@ -1,0 +1,18 @@
+<h1>@Model.City</h1>
+<h2>Country: @Model.Country</h2>
+<h2>Average Rating: @Model.AverageRating</h2>
+
+<ol>
+@foreach (Review review in Model.Reviews)
+{
+  <ul>
+    @* user: Name *@
+    <li>Body: @review.Body</li>
+    <li>Rating: @review.Rating</li>
+    <li>Date: @review.Date</li>
+  </ul>
+}
+</ol>
+
+<a href="/Destinations/"><p>View Destinations</p></a>
+<br>

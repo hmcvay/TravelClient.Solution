@@ -16,6 +16,12 @@ namespace TravelClient
       var allDestinations = Destination.GetDestinations();
       return View(allDestinations);
     }
+
+    public IActionResult Details(int id)
+    {
+      var destination = Destination.GetDetails(id);
+      return View(destination);
+    }
   }
   
 }

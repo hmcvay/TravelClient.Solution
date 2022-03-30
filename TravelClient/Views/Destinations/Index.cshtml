@@ -1,6 +1,11 @@
 <h1>All Destinations:</h1>
 
 <ol>
+@if (Model.Count == 0)
+{
+  <h1>There are no destinations!</h1> 
+}
+
 @foreach (Destination destination in Model)
 {
   <ul>

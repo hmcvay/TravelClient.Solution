@@ -26,5 +26,16 @@ namespace TravelClient.Models
 
       return reviewList;
     } 
+
+    public static Review GetDetails(int id)
+    {
+      var apiCallTask = ApiHelper.GetReview(id);
+      var result = apiCallTask.Result;
+
+      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+      Review review = JsonConvert.DeserializeObject<Review>(jsonResponse.ToString());
+
+      return review;
+    }
   }
 }
