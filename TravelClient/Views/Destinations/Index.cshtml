@@ -1,0 +1,15 @@
+<h1>All Destinations:</h1>
+
+<ol>
+@foreach (Destination destination in Model)
+{
+  <ul>
+    <li>ID: @destination.DestinationId</li>
+    <li>City: @destination.City</li>
+    <li>Country: @destination.Country</li>
+    <li>Average Rating: @destination.AverageRating</li>
+  </ul>
+  <a href="/Destinations/Details/@(destination.DestinationId)"><p>View Details</p></a>
+  <br>
+}
+</ol>
