@@ -1,0 +1,14 @@
+@model TravelClient.Models.Destination
+
+<h1>Add a Destination</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.City)
+  @Html.TextBoxFor(m => m.City)
+
+  @Html.LabelFor(m => m.Country)
+  @Html.TextBoxFor(m => m.Country)
+
+  <input type="submit" value="Add Destination" class="btn btn-default" />
+}

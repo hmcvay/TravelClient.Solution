@@ -22,6 +22,18 @@ namespace TravelClient
       var destination = Destination.GetDetails(id);
       return View(destination);
     }
+
+    public IActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Destination destination)
+    {
+      Destination.Post(destination);
+      return RedirectToAction("Index");
+    }
   }
   
 }

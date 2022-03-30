@@ -12,9 +12,7 @@ namespace TravelClient.Models
     public int Rating { get; set; }
     public DateTime Date { get; set; }
     public int DestinationId { get; set; }
-
-    // [JsonIgnore]
-    public virtual Destination Destination { get; set; }
+    public Destination Destination { get; set; }
 
     public static List<Review> GetReviews()
     {
