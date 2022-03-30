@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using TravelClient.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace TravelClient
 {
@@ -22,6 +23,20 @@ namespace TravelClient
       var review = Review.GetDetails(id);
       return View(review);
     }
+
+    public IActionResult Create()
+    {
+      ViewBag.DestinationId = new SelectList(Destination.GetDestinations(), "DestinationId", "City");
+      return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Review review)
+    {
+      Review.Post(review);
+      return RedirectToAction("Index");
+    }
+
   }
   
 }

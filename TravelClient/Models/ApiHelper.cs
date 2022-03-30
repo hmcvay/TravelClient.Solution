@@ -36,6 +36,15 @@ namespace TravelClient.Models
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
+
+    public static async Task PostReview(string newReview)
+    {
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"reviews", Method.POST);
+      request.AddHeader("Content-Type", "application/json");
+      request.AddJsonBody(newReview);
+      var response = await client.ExecuteTaskAsync(request);
+    }
     
   }
 }

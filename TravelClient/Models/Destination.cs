@@ -37,6 +37,7 @@ namespace TravelClient.Models
       Destination destination = JsonConvert.DeserializeObject<Destination>(jsonResponse.ToString());
 
       return destination;
-    } 
+    }
+
   }
 }

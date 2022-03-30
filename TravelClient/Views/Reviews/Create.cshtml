@@ -1,0 +1,20 @@
+@model TravelClient.Models.Review
+
+<h1>Add a Review</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.Body)
+  @Html.TextBoxFor(m => m.Body)
+
+  @Html.LabelFor(m => m.Rating)
+  @Html.TextBoxFor(m => m.Rating)
+
+  @Html.LabelFor(m => m.Date)
+  @Html.TextBoxFor(m => m.Date)
+
+  @Html.Label("Select Destination")
+  @Html.DropDownList("DestinationId")
+
+  <input type="submit" value="Add Review" class="btn btn-default" />
+}
