@@ -54,6 +54,14 @@ namespace TravelClient.Models
       request.AddJsonBody(newDestination);
       var response = await client.ExecuteTaskAsync(request);
     }
+
+    public static async Task<string> GetAllDestinationsByRating()
+    {
+      RestClient client = new RestClient("http://localhost:5000/api");
+      RestRequest request = new RestRequest($"destinations?highestOverallRating=yes", Method.GET);
+      var response = await client.ExecuteTaskAsync(request);
+      return response.Content;
+    }
     
   }
 }

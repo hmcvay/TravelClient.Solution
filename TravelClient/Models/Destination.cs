@@ -15,7 +15,7 @@ namespace TravelClient.Models
     public string City { get; set; }
     public string Country { get; set; }
     public double AverageRating { get; set; }
-    public virtual ICollection<Review> Reviews { get; set; }
+    public ICollection<Review> Reviews { get; set; }
 
     public static List<Destination> GetDestinations()
     {
@@ -43,6 +43,17 @@ namespace TravelClient.Models
     {
       string jsonDestination = JsonConvert.SerializeObject(destination);
       var apiCallTask = ApiHelper.PostDestination(jsonDestination);
+    }
+
+    public static List<Destination> GetDestinationsByRating()
+    {
+      var apiCallTask = ApiHelper.GetAllDestinationsByRating();
+      var result = apiCallTask.Result;
+
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+      List<Destination> destinationList = JsonConvert.DeserializeObject<List<Destination>>(jsonResponse.ToString());
+
+      return destinationList;
     }
   }
 }

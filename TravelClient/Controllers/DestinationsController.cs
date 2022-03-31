@@ -34,6 +34,12 @@ namespace TravelClient
       Destination.Post(destination);
       return RedirectToAction("Index");
     }
+    
+    public IActionResult ByRating()
+    {
+      var allDestinationsByRating = Destination.GetDestinationsByRating();
+      return View(allDestinationsByRating);
+    }
   }
   
 }

@@ -5,14 +5,18 @@
 <ol>
 @foreach (Review review in Model.Reviews)
 {
-  <ul>
-    @* user: Name *@
-    <li>Body: @review.Body</li>
-    <li>Rating: @review.Rating</li>
-    <li>Date: @review.Date</li>
-  </ul>
+    <li>
+      <ul>
+        @* user: Name *@
+        <li>Body: @review.Body</li>
+        <li>Rating: @review.Rating</li>
+        <li>Date: @review.Date</li>
+      </ul>
+    </li>
 }
 </ol>
 
 <a href="/Destinations/"><p>View Destinations</p></a>
 <br>
+
+@* this.destination.review *@
